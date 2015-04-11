@@ -4,16 +4,8 @@
 }
 
 html, body {
-	height: 100%;
-}
-
-body {
 	margin: 0;
-}
-
-#editor {
-	font-family: Menlo;
-	font-size: 16px;
+	height: 100%;
 }
 
 .frame {
@@ -22,7 +14,14 @@ body {
 	height: 100%;
 }
 
-iframe {
+#editor {
+	background: #000;
+	font-family: Menlo;
+	font-size: 16px;
+}
+
+#browser {
+	background: #333;
 	border-style: none;
 	top: 0;
 	left: 50%;

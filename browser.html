@@ -13,18 +13,17 @@
 			}
 		};
 
-		window.onload = function() {
-			runScript = function(source) {
-				game.addAsset('panda.png');
-				game.addAsset('font.fnt');
-				// game.config.autoStart = true;
-				eval(source);
-			};
+		runScript = function(source) {
+			game.addAsset('panda.png');
+			game.addAsset('font.fnt');
+			eval(source);
+		};
 
+		window.onload = function() {
 			window.loaded = true;
 		};
     </script>
-    <script type="text/javascript" src="src/engine/core.js"></script>
+    <script type="text/javascript" src="panda.min.js"></script>
 </head>
 <body>
 </body>
