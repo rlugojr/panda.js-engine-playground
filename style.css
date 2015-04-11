@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Menlo;
+    src: url(font/Menlo-Regular.ttf);
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+#editor {
+	font-family: Menlo;
+	font-size: 16px;
+}
+
+.frame {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+}
+
+iframe {
+	border-style: none;
+	top: 0;
+	left: 50%;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Panda Engine</title>
+    <script type="text/javascript">
+		pandaConfig = {
+			system: {
+				width: 768,
+				height: 1024,
+				scale: true,
+				center: true
+			}
+		};
+
+		window.onload = function() {
+			runScript = function(source) {
+				game.addAsset('panda.png');
+				game.addAsset('font.fnt');
+				// game.config.autoStart = true;
+				eval(source);
+			};
+
+			window.loaded = true;
+		};
+    </script>
+    <script type="text/javascript" src="src/engine/core.js"></script>
+</head>
+<body>
+</body>
+</html>
