@@ -20,15 +20,12 @@ window.onload = function() {
 		var frameWidth = (width - x) / frameCount;
 
 		$('.frame').each(function(i, frame) {
-			console.log(frame);
 			$(frame).width(frameWidth);
 			$(frame).height(height - headerHeight);
 			$(frame).css('top', headerHeight + 'px');
 			$(frame).css('left', x + 'px');
 			x += frameWidth;
 		});
-		
-		// browser.height(height - headerHeight);
 	};
 
 	var initEditor = function(value) {
@@ -87,7 +84,7 @@ window.onload = function() {
 				saveChanges();
 			}
 		};
-		request.open('GET', 'scripts/' + source + '.js', true);
+		request.open('GET', 'scripts/' + source + '.js?' + Date.now(), true);
 		request.send();
 	};
 
