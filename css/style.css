@@ -34,7 +34,20 @@ body {
 	line-height: 30px;
 }
 
+#header img {
+	display: block;
+	float: left;
+	margin: 7px;
+	margin-right: 14px;
+}
+
+#header img:hover {
+	cursor: pointer;
+	opacity: 0.7;
+}
+
 #menu {
+	display: none;
 	position: absolute;
 	left: 0;
 	width: 200px;

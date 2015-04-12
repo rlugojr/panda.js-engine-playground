@@ -98,6 +98,11 @@ window.onload = function() {
 		loadScript(source);
 	});
 
+	$('#header img').click(function() {
+		menu.toggle();
+		onResize();
+	});
+
 	$(window).on('resize', function() {
 		onResize();
 	});
