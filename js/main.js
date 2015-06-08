@@ -52,6 +52,8 @@ window.onload = function() {
 				saveChanges();
 			}, 1000);
 		});
+
+		hashChange(true);
 	};
 
 	var saveChanges = function() {
@@ -93,6 +95,17 @@ window.onload = function() {
 		if (script) loadScript(script);
 	};
 
+	var loadCodePen = function(user, id) {
+		var request = new XMLHttpRequest();
+		request.onload = function() {
+			if (request.responseText && request.status === 200) {
+				initEditor(request.responseText);
+			}
+		};
+		request.open('GET', 'http://codepen.io/' + user + '/pen/' + id + '.js', true);
+		request.send();
+	};
+
 	$('#menu div').click(function() {
 		$('#menu div.current').removeClass('current');
 		$(this).addClass('current');
@@ -108,24 +121,14 @@ window.onload = function() {
 	$(window).on('resize', function() {
 		onResize();
 	});
-	onResize();
 
 	$(window).on('hashchange', function() {
 		hashChange();
 	});
 
+	var script = document.location.href.split('#')[1];
+	if (!script) menu.show();
+
 	initEditor();
-	hashChange();
-
-
-	return;
-
-	var request = new XMLHttpRequest();
-	request.onload = function() {
-		if (request.responseText && request.status === 200) {
-			initEditor(request.responseText);
-		}
-	};
-	request.open('GET', 'http://codepen.io/' + user + '/pen/' + id + '.js', true);
-	request.send();
+	onResize();
 };
