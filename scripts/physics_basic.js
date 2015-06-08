@@ -27,6 +27,7 @@ game.createClass('Panda', {
 	remove: function() {
 		this.body.remove();
 		this.sprite.remove();
+		game.scene.removeObject(this);
 	},
 
 	update: function() {
