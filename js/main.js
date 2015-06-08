@@ -53,7 +53,7 @@ window.onload = function() {
 			}, 1000);
 		});
 
-		hashChange(true);
+		hashChange();
 	};
 
 	var saveChanges = function() {
@@ -106,11 +106,9 @@ window.onload = function() {
 		request.send();
 	};
 
-	$('#menu div').click(function() {
-		$('#menu div.current').removeClass('current');
+	$('#menu a').click(function() {
+		$('#menu a.current').removeClass('current');
 		$(this).addClass('current');
-		var source = $(this).attr('data-source');
-		loadScript(source);
 	});
 
 	$('#header img').click(function() {
@@ -127,7 +125,15 @@ window.onload = function() {
 	});
 
 	var script = document.location.href.split('#')[1];
-	if (!script) menu.show();
+	if (script) {
+		$('#menu a').each(function(i, item) {
+			var href = $(item).attr('href');
+			if (href.substr(1) === script) {
+				$(item).addClass('current');
+				return false;
+			}
+		});
+	}
 
 	initEditor();
 	onResize();
