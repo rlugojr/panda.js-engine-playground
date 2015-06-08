@@ -88,6 +88,11 @@ window.onload = function() {
 		request.send();
 	};
 
+	var hashChange = function() {
+		var script = document.location.href.split('#')[1];
+		if (script) loadScript(script);
+	};
+
 	$('#menu div').click(function() {
 		$('#menu div.current').removeClass('current');
 		$(this).addClass('current');
@@ -105,15 +110,16 @@ window.onload = function() {
 	});
 	onResize();
 
-	var href = document.location.href.split('?');
-	if (href[1]) href = href[1].split('&');
-	if (href[1]) {
-		var user = href[0];
-		var id = href[1];
-	}
+	$(window).on('hashchange', function() {
+		hashChange();
+	});
 
-	if (!user || !id) return initEditor();
-	
+	initEditor();
+	hashChange();
+
+
+	return;
+
 	var request = new XMLHttpRequest();
 	request.onload = function() {
 		if (request.responseText && request.status === 200) {
