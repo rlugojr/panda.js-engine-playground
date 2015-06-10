@@ -14,6 +14,11 @@
 <body>
 	<div id="header">
 		<img src="menu.png">Panda Engine playground
+		<div id="options">
+			<label for="showBodies">Bodies</label><input type="checkbox" id="showBodies">
+			<label for="showBounds">Bounds</label><input type="checkbox" id="showBounds">
+			<label for="showHitAreas">HitAreas</label><input type="checkbox" id="showHitAreas">
+		</div>
 	</div>
 	<div id="menu">
 		<h1>1. Container</h1>
@@ -22,11 +27,13 @@
 		<h1>2. Sprite</h1>
 		<a href="#sprite_basic">2.1 Basic</a>
 		<a href="#sprite_extend">2.2 Extend</a>
+		<a href="#sprite_skew">2.3 Skewing</a>
 		
 		<h1>3. Input</h1>
 		<a href="#input_sprite">3.1 Sprite</a>
 		<a href="#input_scene">3.2 Scene</a>
 		<a href="#input_keyboard">3.3 Keyboard</a>
+		<a href="#input_hitarea">3.4 Hit area</a>
 
 		<h1>4. Tween</h1>
 		<a href="#tween_basic">4.1 Basic</a>
@@ -49,7 +56,10 @@
 
 		<h1>7. Physics</h1>
 		<a href="#physics_basic">7.1 Basic</a>
-		<a href="#physics_circle">7.1 Circle</a>
+		<a href="#physics_circle">7.2 Circle</a>
+
+		<h1>8. Particle</h1>
+		<a href="#particle_basic">8.1 Basic</a>
 	</div>
 	<div id="editor" class="frame">
 		<div id="ace"></div>

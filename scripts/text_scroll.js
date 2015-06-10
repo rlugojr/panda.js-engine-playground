@@ -7,15 +7,15 @@ game.createClass('MyText', 'Text', {
 	align: 'center',
 
 	init: function() {
-		this.position.x = game.system.width / 2;
-		this.position.y = game.system.height;
+		this.position.x = game.width / 2;
+		this.position.y = game.height;
 		this.anchor.x = this.width / 2;
 		this.cacheAsBitmap = true;
 		this.addTo(game.scene.stage);
 	},
 
 	update: function() {
-		this.position.y -= 20 * game.system.delta;
+		this.position.y -= 20 * game.delta;
 	}
 });
 

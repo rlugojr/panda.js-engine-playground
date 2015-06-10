@@ -2,21 +2,29 @@ game.addAsset('panda.png');
 
 game.createClass('Panda', 'Sprite', {
 	texture: 'panda.png',
+	interactive: true,
 
 	init: function(x, y) {
 		this.position.set(x, y);
+		this.hitArea = new game.Rectangle(100, 100);
 		this.addTo(game.scene.stage);
 	},
 
-	update: function() {
-		this.rotation += 1 * game.delta;
+	mousedown: function() {
+		this.remove();
+	},
+
+	mousemove: function() {
+		this.alpha = 0.5;
+	},
+
+	mouseout: function() {
+		this.alpha = 1;
 	}
 });
 
 game.createScene('Main', {
 	init: function() {
 		var sprite = new game.Panda(100, 100);
-		var sprite = new game.Panda(300, 300);
-		var sprite = new game.Panda(500, 500);
 	}
 });

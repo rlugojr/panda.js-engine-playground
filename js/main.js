@@ -76,6 +76,10 @@ window.onload = function() {
 		var footer = '});'
 		value = header + editor.getSession().getValue() + footer;
 		browser.contentWindow.runScript(value);
+
+		browser.contentWindow.game.Debug.showBodies = $('#showBodies').is(':checked');
+		browser.contentWindow.game.Debug.showBounds = $('#showBounds').is(':checked');
+		browser.contentWindow.game.Debug.showHitAreas = $('#showHitAreas').is(':checked');
 	};
 
 	var loadScript = function(source) {
@@ -114,6 +118,12 @@ window.onload = function() {
 	$('#header img').click(function() {
 		menu.toggle();
 		onResize();
+	});
+
+	$('#header #options input').click(function() {
+		var id = $(this).attr('id');
+		var checked = $(this).is(':checked');
+		browser.contentWindow.game.Debug[id] = checked;
 	});
 
 	$(window).on('resize', function() {

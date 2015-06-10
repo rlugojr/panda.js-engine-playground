@@ -3,7 +3,7 @@ game.addAsset('panda.png');
 game.createScene('Main', {
 	init: function() {
 		this.sprite = new game.Sprite('panda.png');
-		this.sprite.addTo(this.stage)
+		this.sprite.addTo(this.stage);
 	},
 
 	mousedown: function(x, y) {
