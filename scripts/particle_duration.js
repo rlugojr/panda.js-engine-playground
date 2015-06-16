@@ -5,7 +5,7 @@ game.createScene('Main', {
     	this.emitter = new game.Emitter();
     	this.emitter.textures.push('particle.png');
     	this.emitter.angleVar = Math.PI / 4;
-    	this.emitter.position.set(game.width / 2, game.height / 2);
+    	this.emitter.startPos.set(game.width / 2, game.height / 2);
     	this.emitter.rate = 20;
     	this.emitter.count = 10;
     	this.emitter.duration = 500;

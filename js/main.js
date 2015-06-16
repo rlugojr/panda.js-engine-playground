@@ -4,6 +4,7 @@ window.onload = function() {
 	var changeTimer;
 	var menu = $('#menu');
 	var header = $('#header');
+	var storage = 'net.pandajs.engine-playground';
 
 	var onResize = function() {
 		var menuVisible = menu.is(':visible');
@@ -124,6 +125,7 @@ window.onload = function() {
 		var id = $(this).attr('id');
 		var checked = $(this).is(':checked');
 		browser.contentWindow.game.Debug[id] = checked;
+		localStorage[storage + '.' + id] = true;
 	});
 
 	$(window).on('resize', function() {
@@ -144,6 +146,10 @@ window.onload = function() {
 			}
 		});
 	}
+
+	if (localStorage[storage + '.showBodies']) $('#showBodies').prop('checked', true);
+	if (localStorage[storage + '.showBounds']) $('#showBounds').prop('checked', true);
+	if (localStorage[storage + '.showHitAreas']) $('#showHitAreas').prop('checked', true);
 
 	initEditor();
 	onResize();

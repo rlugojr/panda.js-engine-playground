@@ -8,7 +8,7 @@ game.createClass('StarEmitter', 'Emitter', {
     rate: 10,
     endAlpha: 0,
     // Custom properties
-    rotation: 0,
+    startRotation: 0,
     rotateSpeed: 2,
     distFromCenter: 100,
 
@@ -19,10 +19,10 @@ game.createClass('StarEmitter', 'Emitter', {
     },
 
     update: function() {
-        // Rotate emitter position around center of canvas
-        this.position.x = game.width / 2 + Math.sin(this.rotation) * this.distFromCenter;
-        this.position.y = game.height / 2 + Math.cos(this.rotation) * this.distFromCenter;
-        this.rotation += this.rotateSpeed * game.delta;
+        // Rotate particle start position around center of canvas
+        this.startPos.x = game.width / 2 + Math.sin(this.startRotation) * this.distFromCenter;
+        this.startPos.y = game.height / 2 + Math.cos(this.startRotation) * this.distFromCenter;
+        this.startRotation += this.rotateSpeed * game.delta;
     }
 });
 
