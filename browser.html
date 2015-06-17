@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Panda Engine</title>
+    <script type="text/javascript" src="js/panda.min.js"></script>
     <script type="text/javascript">
-		pandaConfig = {
+    	game.config = {
 			system: {
 				width: 800,
 				height: 600,
@@ -22,7 +23,7 @@
 			}
 		};
 
-		runScript = function(source) {
+		var runScript = function(source) {
 			eval(source);
 		};
 
@@ -30,7 +31,6 @@
 			window.loaded = true;
 		};
     </script>
-    <script type="text/javascript" src="js/panda.min.js"></script>
 </head>
 <body>
 </body>

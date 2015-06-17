@@ -73,7 +73,7 @@ window.onload = function() {
 			return;
 		}
 
-		var header = "game.module('game.main').body(function() {";
+		var header = "game.module('playground').body(function() {";
 		var footer = '});'
 		value = header + editor.getSession().getValue() + footer;
 		browser.contentWindow.runScript(value);
