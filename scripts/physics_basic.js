@@ -3,8 +3,8 @@ game.addAsset('panda.png');
 game.createClass('Panda', {
 	init: function(x, y) {
 		this.body = new game.Body();
-		this.body.setCollisionGroup(1);
-		this.body.setCollideAgainst(0);
+		this.body.collisionGroup = 1;
+		this.body.collideAgainst.push(0);
 		this.body.position.set(x, y);
 		this.body.collide = this.collide.bind(this);
 
@@ -35,13 +35,13 @@ game.createClass('Panda', {
 	}
 });
 
-game.createScene('Main', {	
+game.createScene('Main', {
     init: function() {
     	this.world = new game.World();
 
     	var floor = new game.Body();
     	floor.position.set(game.width / 2, game.height + 50);
-    	floor.mass = 0;
+    	floor.static = true;
     	floor.addShape(new game.Rectangle(game.width, 100));
     	floor.addTo(this.world);
 

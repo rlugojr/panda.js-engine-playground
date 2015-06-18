@@ -73,7 +73,7 @@ window.onload = function() {
 			return;
 		}
 
-		var header = "game.module('playground').body(function() {";
+		var header = "game.module('game.playground').body(function() {";
 		var footer = '});'
 		value = header + editor.getSession().getValue() + footer;
 		browser.contentWindow.runScript(value);
@@ -125,7 +125,7 @@ window.onload = function() {
 		var id = $(this).attr('id');
 		var checked = $(this).is(':checked');
 		browser.contentWindow.game.Debug[id] = checked;
-		localStorage[storage + '.' + id] = true;
+		localStorage[storage + '.' + id] = (checked ? 'true' : '');
 	});
 
 	$(window).on('resize', function() {

@@ -3,8 +3,8 @@ game.addAsset('panda.png');
 game.createClass('Panda', {
 	init: function(x, y) {
 		this.body = new game.Body();
-		this.body.setCollisionGroup(1);
-		this.body.setCollideAgainst(0);
+		this.body.collisionGroup = 1;
+		this.body.collideAgainst.push(0);
 		this.body.velocity.x = Math.random(150, 300);
 		this.body.velocity.y = Math.random(0, -300);
 		this.body.damping = 0.3;
@@ -45,7 +45,7 @@ game.createScene('Main', {
 
     	var floor = new game.Body();
     	floor.position.set(game.width / 2, game.height + 50);
-    	floor.mass = 0;
+    	floor.static = true;
     	floor.addShape(new game.Rectangle(game.width + 100, 100));
     	floor.addTo(this.world);
 
