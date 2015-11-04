@@ -124,8 +124,9 @@ window.onload = function() {
 	$('#header #options input').click(function() {
 		var id = $(this).attr('id');
 		var checked = $(this).is(':checked');
-		browser.contentWindow.game.Debug[id] = checked;
 		localStorage[storage + '.' + id] = (checked ? 'true' : '');
+		if (!browser.contentWindow.game.Debug) return;
+		browser.contentWindow.game.Debug[id] = checked;
 	});
 
 	$(window).on('resize', function() {
