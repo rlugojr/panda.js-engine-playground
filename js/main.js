@@ -81,6 +81,7 @@ window.onload = function() {
 		browser.contentWindow.game.Debug.showBodies = $('#showBodies').is(':checked');
 		browser.contentWindow.game.Debug.showBounds = $('#showBounds').is(':checked');
 		browser.contentWindow.game.Debug.showHitAreas = $('#showHitAreas').is(':checked');
+		browser.contentWindow.game.Debug.fakeTouch = $('#fakeTouch').is(':checked');
 	};
 
 	var loadScript = function(source) {
@@ -151,6 +152,7 @@ window.onload = function() {
 	if (localStorage[storage + '.showBodies']) $('#showBodies').prop('checked', true);
 	if (localStorage[storage + '.showBounds']) $('#showBounds').prop('checked', true);
 	if (localStorage[storage + '.showHitAreas']) $('#showHitAreas').prop('checked', true);
+	if (localStorage[storage + '.fakeTouch']) $('#fakeTouch').prop('checked', true);
 
 	initEditor();
 	onResize();

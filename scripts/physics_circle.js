@@ -52,10 +52,6 @@ game.createScene('Main', {
     	this.addTimer(100, this.addPanda.bind(this), true);
     },
 
-    mousedown: function() {
-    	game.Debug.showBodies = !game.Debug.showBodies;
-    },
-
     addPanda: function() {
     	var panda = new game.Panda(-50, game.height / 2 + Math.random(-100, 100));
     }
