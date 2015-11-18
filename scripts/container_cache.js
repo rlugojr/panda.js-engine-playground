@@ -7,7 +7,12 @@ game.createScene('Main', {
 		container.addTo(this.stage);
 
 		var sprite = new game.Sprite('panda.png');
-		sprite.position.set(50, 50);
 		sprite.addTo(container);
+
+		var sprite = new game.Sprite('panda.png');
+		sprite.position.set(100, 100);
+		sprite.addTo(container);
+
+		container.cacheAsBitmap = true;
 	}
 });

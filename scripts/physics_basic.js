@@ -9,7 +9,7 @@ game.createClass('Panda', {
 		this.body.collide = this.collide.bind(this);
 
 		this.sprite = new game.Sprite('panda.png');
-		this.sprite.anchorCenter();
+		this.sprite.anchor.set(0.5);
 		this.sprite.addTo(game.scene.stage);
 
 		var shape = new game.Rectangle(this.sprite.width, this.sprite.height);

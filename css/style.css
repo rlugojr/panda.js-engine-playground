@@ -72,7 +72,7 @@ body {
 	background: #000;
 	font-size: 14px;
 	overflow: auto;
-	display: none;
+	/*display: none;*/
 }
 
 #menu h1 {

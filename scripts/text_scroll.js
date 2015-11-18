@@ -9,7 +9,7 @@ game.createClass('MyText', 'Text', {
 	init: function() {
 		this.position.x = game.width / 2;
 		this.position.y = game.height;
-		this.anchor.x = this.width / 2;
+		this.anchor.x = 0.5;
 		this.cacheAsBitmap = true;
 		this.addTo(game.scene.stage);
 	},
