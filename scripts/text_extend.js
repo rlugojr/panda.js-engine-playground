@@ -1,10 +1,14 @@
 game.addAsset('font.fnt');
 
 game.createClass('MyText', 'Text', {
-	font: 'Fjalla',
-
 	init: function() {
-		this.addTo(game.scene.stage);	
+		this.anchorCenter();
+		this.position.set(game.width / 2, game.height / 2);
+		this.addTo(game.scene.stage);
+	},
+
+	update: function() {
+		this.rotation += 1 * game.delta;
 	}
 });
 

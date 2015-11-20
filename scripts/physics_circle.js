@@ -12,7 +12,7 @@ game.createClass('Panda', {
 		this.body.collide = this.collide.bind(this);
 
 		this.sprite = new game.Sprite('panda.png');
-		this.sprite.anchor.set(0.5);
+		this.sprite.anchorCenter();
 		this.sprite.addTo(game.scene.stage);
 
 		var shape = new game.Circle(this.sprite.width / 2);

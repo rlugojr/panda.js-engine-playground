@@ -1,15 +1,14 @@
-game.addAudio('music.m4a', 'music');
+game.addAudio('music.m4a');
+game.addAudio('music2.m4a');
 
 game.createScene('Main', {
 	init: function() {
-		game.audio.playMusic('music');
+		var music = new game.Music('music.m4a');
+		music.play();
 	},
 
 	mousedown: function() {
-		game.audio.pauseMusic();
-	},
-
-	mouseup: function() {
-		game.audio.resumeMusic();
+		var music = new game.Music('music2.m4a');
+		music.play();
 	}
 });

@@ -2,9 +2,7 @@ game.addAsset('font.fnt');
 
 game.createScene('Main', {
 	init: function() {
-		var text = new game.Text('Hello Panda!', {
-			font: 'Fjalla'
-		});
+		var text = new game.Text('Hello Panda!');
 		text.addTo(this.stage);
 	}
 });

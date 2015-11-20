@@ -3,7 +3,7 @@ game.addAsset('panda.png');
 game.createScene('Main', {
 	init: function() {
 		var sprite = new game.Sprite('panda.png');
-		sprite.anchor.set(0.5);
+		sprite.anchorCenter();
 		sprite.scale.set(0);
 		sprite.center(this.stage);
 		sprite.addTo(this.stage);

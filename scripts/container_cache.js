@@ -13,6 +13,6 @@ game.createScene('Main', {
 		sprite.position.set(100, 100);
 		sprite.addTo(container);
 
-		container.cacheAsBitmap = true;
+		container.cache = true;
 	}
 });

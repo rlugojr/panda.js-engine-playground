@@ -1,12 +1,13 @@
-game.addAudio('music.m4a', 'music');
+game.addAudio('music.m4a');
 
 game.createScene('Main', {
 	init: function() {
-		var music = game.audio.playSound('music');
-		game.audio.fadeIn(music, 1000);
+		var music = new game.Music('music.m4a');
+		music.play();
+		music.fadeIn(1);
 
 		this.addTimer(6000, function() {
-			game.audio.fadeOut(music, 2000);
+			music.fadeOut(2);
 		});
 	}
 });

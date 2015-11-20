@@ -15,6 +15,6 @@ game.createScene('Main', {
         
         grap.addTo(this.stage);
 
-        grap.cacheAsBitmap = true;
+        grap.cache = true;
     }
 });
