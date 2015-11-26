@@ -7,6 +7,7 @@ game.createScene('Main', {
     },
 
     update: function() {
-    	this.pandas.tilePosition.x -= 50 * game.delta;
+    	this.pandas.tilePosition.x -= 300 * game.delta;
+    	this.pandas.tilePosition.y -= 100 * game.delta;
     }
 });
